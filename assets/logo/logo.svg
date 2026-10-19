@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="36" viewBox="0 0 18 36" fill="none" stroke-linecap="square">
+  <!-- Logo provisoire : remplacer ce fichier par le logo épée officiel (même nom : logo.svg) -->
+  <path d="M9 1v23" stroke="#EDEDED" stroke-width="2"/>
+  <path d="M2 24h14" stroke="#C2A06B" stroke-width="2"/>
+  <path d="M3 24c0 5 12 5 12 0" stroke="#C2A06B" stroke-width="1.5"/>
+  <path d="M9 24v8" stroke="#EDEDED" stroke-width="3"/>
+  <circle cx="9" cy="34" r="1.6" fill="#EDEDED"/>
+</svg>
