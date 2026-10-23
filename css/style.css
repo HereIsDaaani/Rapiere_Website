@@ -18,8 +18,9 @@
   --accent-bg: #15120C;
   --accent-line: #4A3D28;
 
-  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
-  --font-body: 'Barlow', system-ui, sans-serif;
+  --font-display: 'Archivo', 'Arial Black', sans-serif;   /* utilisée en largeur 125 % (Expanded) */
+  --font-body: 'Archivo', system-ui, sans-serif;
+  --font-brand: 'Syncopate', 'Archivo', sans-serif;         /* nom de marque uniquement */
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
   --max: 1240px;
@@ -43,7 +44,8 @@ a { color: var(--text); text-decoration: none; }
 a:hover { color: var(--accent); }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
-h1, h2, h3 { margin: 0; font-family: var(--font-display); text-transform: uppercase; }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-stretch: 125%; text-transform: uppercase; }
+h3 { font-stretch: 112%; }
 p { margin: 0; }
 
 .container { max-width: var(--max); margin: 0 auto; padding-left: 24px; padding-right: 24px; }
@@ -62,10 +64,10 @@ p { margin: 0; }
   gap: 16px; padding-top: 18px; padding-bottom: 18px;
 }
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand-logo { height: 36px; width: auto; display: block; }
+.brand-logo { height: 46px; width: auto; display: block; }
 .brand-name {
-  font-family: var(--font-display); font-weight: 700; font-size: 26px;
-  letter-spacing: 0.14em; text-transform: uppercase;
+  font-family: var(--font-brand); font-weight: 700; font-size: 19px;
+  letter-spacing: 0.26em; margin-right: -0.26em;
 }
 .nav-links {
   display: flex; flex-wrap: wrap; align-items: center; gap: 32px;
@@ -97,8 +99,8 @@ p { margin: 0; }
 }
 .eyebrow-line { width: 32px; height: 2px; background: var(--accent); }
 .hero-title {
-  font-weight: 700; font-size: clamp(64px, 11vw, 156px);
-  line-height: 0.9; letter-spacing: -0.005em; color: var(--text-strong);
+  font-weight: 800; font-size: clamp(42px, 9vw, 128px);
+  line-height: 0.95; letter-spacing: -0.01em; color: var(--text-strong);
 }
 .lead { font-size: 22px; color: var(--text-muted); max-width: 560px; }
 
@@ -126,7 +128,7 @@ p { margin: 0; }
 .section-index {
   font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.22em; color: var(--accent);
 }
-.section h2 { font-weight: 700; font-size: clamp(44px, 6vw, 80px); line-height: 0.95; }
+.section h2 { font-weight: 800; font-size: clamp(30px, 4.6vw, 64px); line-height: 1; letter-spacing: -0.005em; }
 
 /* Grilles de cellules séparées par un filet */
 .cells {
@@ -139,14 +141,14 @@ p { margin: 0; }
   background: var(--bg-alt); padding: 40px 32px;
   display: flex; flex-direction: column; gap: 16px;
 }
-.cell h3 { font-weight: 600; font-size: 32px; line-height: 1.05; }
+.cell h3 { font-weight: 700; font-size: 24px; line-height: 1.1; }
 .cell p { color: var(--text-muted); }
 .cell-tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; color: var(--text-dim); }
 
 /* Chaîne d'engagement */
 .chain .cell { background: var(--bg); padding: 36px 28px; gap: 14px; }
 .chain .cell p { font-size: 16px; }
-.chain .step { font-weight: 700; font-size: 38px; line-height: 1; }
+.chain .step { font-weight: 800; font-size: 30px; line-height: 1; }
 .chain .cell-tag { font-size: 13px; letter-spacing: 0; }
 .chain .cell-engage { background: var(--accent-bg); outline: 2px solid var(--accent); outline-offset: -2px; }
 .cell-engage .cell-tag, .cell-engage .step { color: var(--accent); }
@@ -159,12 +161,12 @@ p { margin: 0; }
 /* Atouts */
 .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px 32px; }
 .feature { display: flex; flex-direction: column; gap: 10px; padding-top: 22px; border-top: 2px solid var(--text); }
-.feature h3 { font-weight: 600; font-size: 26px; }
+.feature h3 { font-weight: 700; font-size: 19px; line-height: 1.2; }
 .feature p { color: var(--text-muted); font-size: 16px; }
 
 /* Cas d'usage */
 .usecases .cell { background: var(--bg); }
-.usecases h3 { font-size: 28px; padding-bottom: 14px; border-bottom: 1px solid var(--accent-line); }
+.usecases h3 { font-size: 21px; padding-bottom: 14px; border-bottom: 1px solid var(--accent-line); }
 .usecases ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .usecases li { position: relative; padding-left: 20px; color: var(--text-muted); font-size: 16px; }
 .usecases li::before {
@@ -182,15 +184,15 @@ p { margin: 0; }
 .member-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); }
 .placeholder { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; color: var(--text-dim); }
 .member-info { padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 6px; }
-.member-info h3 { font-weight: 600; font-size: 28px; }
+.member-info h3 { font-weight: 700; font-size: 22px; }
 .member-role { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.1em; color: var(--accent); }
 
 /* Reconnaissances */
 .recognition { display: flex; flex-direction: column; gap: 28px; padding-top: 40px; border-top: 1px solid var(--line-strong); }
 .incubated { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 24px; }
-.incubator { font-family: var(--font-display); font-weight: 600; font-size: 24px; text-transform: uppercase; }
+.incubator { font-family: var(--font-display); font-stretch: 112%; font-weight: 700; font-size: 20px; text-transform: uppercase; }
 .award { padding: 28px; gap: 6px; }
-.award-org { font-family: var(--font-display); font-weight: 700; font-size: 34px; text-transform: uppercase; }
+.award-org { font-family: var(--font-display); font-stretch: 125%; font-weight: 800; font-size: 28px; text-transform: uppercase; }
 .award p { font-size: 15px; }
 
 /* ---------- Footer ---------- */
